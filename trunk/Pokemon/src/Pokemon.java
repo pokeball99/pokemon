@@ -1,6 +1,5 @@
 /*
  * Kevin Fong and David Wong
-	CCCCCCCCCCCCCCCCCC
  * APCS Period 6
  * Interface for Pokemon
  */
