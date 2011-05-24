@@ -11,7 +11,7 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	private ArrayList<String> moves = new ArrayList<String>();
 	//private 
 	public void init() {
-		setSize(200, 500);
+		setSize(700, 500);
 		setBackground(Color.WHITE);
 		//initializes applet
 	}
