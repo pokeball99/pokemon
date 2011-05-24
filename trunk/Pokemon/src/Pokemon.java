@@ -23,9 +23,9 @@ public class Pokemon{
 	private int EXP;
 	private BufferedImage sprite;
 	
-	
 	public Pokemon()throws FileNotFoundException{
-		Scanner s = new Scanner(new File("Base Stats.txt"));
+		Scanner s = new Scanner(new File("List of Pokemon.txt"));
+		ArrayList<Pokemon> list = new ArrayList<Pokemon>();
 		while(s.hasNextLine()){
 			String line = s.nextLine();
 			Scanner lineScan = new Scanner(line);
@@ -46,6 +46,8 @@ public class Pokemon{
 				setSpd(lineScan.nextInt());
 				//setEXP(0);
 				//setSprite();
+				list.add(this);
+				System.out.print(list.toString());
 			}
 		}
 	}
