@@ -29,7 +29,7 @@ public class Tester{
 				int spd = (lineScan.nextInt());
 				
 				Pokemon pokemon = new Pokemon(dex, name, type1, type2,
-						1, hp, atk, def, spAtk, spDef, spd, 0);
+						1, hp, atk, def, spAtk, spDef, spd, 10);
 				list.add(pokemon);
 				System.out.print(list.toString());
 			
