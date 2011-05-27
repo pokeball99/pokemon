@@ -15,7 +15,9 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	public void init() {
 		setSize(700, 500);
 		setBackground(Color.WHITE);
-		//Pokemon a = new Pokemon();
+		Pokemon a = new Pokemon(2, "name", "type", "type",
+				5, 0, 0, 0, 0, 0, 0,
+				0);
 		//initializes applet
 	}
 

@@ -41,7 +41,7 @@ public class Pokemon{
 		SpAtk = spAtk;
 		SpDef = spDef;
 		Spd = spd;
-		EXP = EXP;
+		this.EXP = EXP;
 		this.sprite = sprite;
 	}
 
