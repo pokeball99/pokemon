@@ -23,33 +23,26 @@ public class Pokemon{
 	private int EXP;
 	private BufferedImage sprite;
 	
-	public Pokemon()throws FileNotFoundException{
-		Scanner s = new Scanner(new File("List of Pokemon.txt"));
-		ArrayList<Pokemon> list = new ArrayList<Pokemon>();
-		while(s.hasNextLine()){
-			String line = s.nextLine();
-			Scanner lineScan = new Scanner(line);
-			//String next = s.next();
-			//Scanner tokenScan = new Scanner(next);
-			while(lineScan.hasNext()){
-				setDexNum(lineScan.nextInt());
-				setName(lineScan.next());
-				setType1(lineScan.next());
-				if(!(lineScan.next().equals("Null"))){
-					setType2(lineScan.next());
-				}
-				//setLevel(1);
-				setHP(lineScan.nextInt());
-				setAtk(lineScan.nextInt());
-				setDef(lineScan.nextInt());
-				setSpAtk(lineScan.nextInt());
-				setSpd(lineScan.nextInt());
-				//setEXP(0);
-				//setSprite();
-				list.add(this);
-				System.out.print(list.toString());
-			}
-		}
+
+	public Pokemon(){
+	}
+	public Pokemon(int dexNum, String name, String type1, String type2,
+			int level, int hP, int atk, int def, int spAtk, int spDef, int spd,
+			int EXP) {
+		super();
+		this.dexNum = dexNum;
+		this.name = name;
+		Type1 = type1;
+		Type2 = type2;
+		Level = level;
+		HP = hP;
+		Atk = atk;
+		Def = def;
+		SpAtk = spAtk;
+		SpDef = spDef;
+		Spd = spd;
+		EXP = EXP;
+		this.sprite = sprite;
 	}
 
 	public void setDexNum(int dexNum){
@@ -174,4 +167,7 @@ public class Pokemon{
 		return sprite;
 	}
 	
+	public String toString() {
+		return "" + dexNum + name + Level + HP + Atk + Def + SpAtk + SpDef + Spd + EXP;
+	}
 }
