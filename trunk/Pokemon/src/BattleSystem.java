@@ -6,6 +6,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.*;
 import java.applet.*;
+
+import javax.imageio.ImageIO;
 public class BattleSystem extends Applet implements Runnable,KeyListener{
 	private ArrayList<String> commands = new ArrayList<String>();
 	private ArrayList<String> moves = new ArrayList<String>();
@@ -13,9 +15,10 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	public void init() {
 		setSize(700, 500);
 		setBackground(Color.WHITE);
+		//Pokemon a = new Pokemon();
 		//initializes applet
 	}
-	
+
 	public void start(){
 		//
 	}
