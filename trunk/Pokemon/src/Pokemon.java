@@ -45,6 +45,7 @@ public class Pokemon{
 		this.sprite = sprite;
 	}
 
+	
 	public void setDexNum(int dexNum){
 		this.dexNum = dexNum;
 	}
@@ -168,6 +169,6 @@ public class Pokemon{
 	}
 	
 	public String toString() {
-		return dexNum + " " + name + " " + Type1 + " " + Type2 + " " + Level + " "+ HP + " " + Atk + " " + Def + " " + SpAtk + " " + SpDef + " " + Spd + " "+ EXP + " ";
+		return dexNum + " " + name + " " + Type1 + " " + Type2 + " " + Level + " "+ HP + " " + Atk + " " + Def + " " + SpAtk + " " + SpDef + " " + Spd + " "+ EXP;
 	}
 }
