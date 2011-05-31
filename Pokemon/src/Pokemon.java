@@ -28,7 +28,7 @@ public class Pokemon{
 	}
 	public Pokemon(int dexNum, String name, String type1, String type2,
 			int level, int hp, int atk, int def, int spAtk, int spDef, int spd,
-			int exp) {
+			int exp, BufferedImage sprite) {
 		super();
 		DexNum = dexNum;
 		Name = name;
@@ -42,7 +42,7 @@ public class Pokemon{
 		SpDef = spDef;
 		Spd = spd;
 		EXP = exp;
-		//Sprite = sprite;
+		Sprite = sprite;
 	}
 
 	
