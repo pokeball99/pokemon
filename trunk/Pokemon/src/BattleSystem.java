@@ -4,6 +4,7 @@ import java.util.*;
 import java.awt.color.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.applet.*;
 
@@ -24,6 +25,14 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	
 	public void paint(Graphics g) {
 		update(g);
+		BufferedImage pokemon1 = null;
+		try {
+			pokemon1 = ImageIO.read(new File("Charizard.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		g.drawImage(pokemon1, 100, 500, null);
 		//Putting stuff on screen
 	}
 	
