@@ -4,7 +4,7 @@
 025  Pikachu  Electric Null 35  55  30  90  50  40  Tackle ThunderWave Thunderbolt Thunder
 059  Arcanine  Fire Null 90  110  80  95  100  80  Bite FireFang TakeDown FireBlast 
 094  Gengar  Ghost Poison 60  65  60  110  130  75 Psychic ConfuseRay ShadowBall DarkPulse
-129  Magikarp  Water Null 20  10  55  80  15  20  Splash Tackle Null Null
+129  Magikarp  Water Null 20  10  55  80  15  20  Splash Tackle HyperBeam Null
 133  Eevee  Normal Null 55  55  50  55  45  65  Tackle Bite DoubleTeam Take Down 
 143  Snorlax  Normal Null 160  110  65  30  65  110 Tackle DefenseCurl BodySlam HyperBeam 
 150  Mewtwo  Psychic Null 106  110  90  130  154  90 Confusion Psychic AuraSphere HyperBeam
