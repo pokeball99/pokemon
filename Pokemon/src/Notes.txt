@@ -1,0 +1,6 @@
+Status Effects to do:
+Confusion
+Sleep
+Poison
+Paralysis
+336  Seviper  Poison Null 73  100  60  65  100  60  Bite PoisonFang Crunch PoisonJab
