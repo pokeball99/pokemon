@@ -32,7 +32,7 @@ public class Tester{
 						1, hp, atk, def, spAtk, spDef, spd, 10);
 				list.add(pokemon);
 				System.out.print(list.toString());
-			
+				System.out.print(type1 + " " + type2 + " ");
 		}
 	}
 }
