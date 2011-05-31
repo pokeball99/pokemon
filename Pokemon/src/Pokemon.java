@@ -2,15 +2,15 @@
  * Kevin Fong and David Wong
  * APCS Period 6
  * Interface for Pokemon
- */
+ */ 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.*;
 import java.io.*;
 
 public class Pokemon{
-	private int dexNum;
-	private String name;
+	private int DexNum;
+	private String Name;
 	public String Type1;
 	public String Type2;
 	private int Level;
@@ -21,47 +21,47 @@ public class Pokemon{
 	private int SpDef;
 	private int Spd;
 	private int EXP;
-	private BufferedImage sprite;
+	private BufferedImage Sprite;
 	
 
 	public Pokemon(){
 	}
 	public Pokemon(int dexNum, String name, String type1, String type2,
-			int level, int hP, int atk, int def, int spAtk, int spDef, int spd,
-			int EXP) {
+			int level, int hp, int atk, int def, int spAtk, int spDef, int spd,
+			int exp) {
 		super();
-		this.dexNum = dexNum;
-		this.name = name;
+		DexNum = dexNum;
+		Name = name;
 		Type1 = type1;
 		Type2 = type2;
 		Level = level;
-		HP = hP;
+		HP = hp;
 		Atk = atk;
 		Def = def;
 		SpAtk = spAtk;
 		SpDef = spDef;
 		Spd = spd;
-		this.EXP = EXP;
-		this.sprite = sprite;
+		EXP = exp;
+		//Sprite = sprite;
 	}
 
 	
 	public void setDexNum(int dexNum){
-		this.dexNum = dexNum;
+		this.DexNum = dexNum;
 	}
 	
 	public int getDexNum(){
-		return dexNum;
+		return DexNum;
 	}
 	
 	
 	public void setName(String name) {
-		this.name = name;
+		this.Name = name;
 	}
 
 
 	public String getName() {
-		return name;
+		return Name;
 	}
 
 	public void setType1(String Type1){
@@ -160,15 +160,15 @@ public class Pokemon{
 
 
 	public void setSprite(BufferedImage sprite) {
-		this.sprite = sprite;
+		this.Sprite = sprite;
 	}
 
 
 	public BufferedImage getSprite() {
-		return sprite;
+		return Sprite;
 	}
 	
 	public String toString() {
-		return dexNum + " " + name + " " + Type1 + " " + Type2 + " " + Level + " "+ HP + " " + Atk + " " + Def + " " + SpAtk + " " + SpDef + " " + Spd + " "+ EXP;
+		return DexNum + " " + Name + " " + Type1 + " " + Type2 + " " + Level + " "+ HP + " " + Atk + " " + Def + " " + SpAtk + " " + SpDef + " " + Spd + " "+ EXP;
 	}
 }
