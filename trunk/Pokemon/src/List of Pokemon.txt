@@ -24,7 +24,7 @@
 283  Surskit  Water Bug 40  30  32  65  50  52  Bubblebeam DoubleTeam Agility BugBuzz
 286  Breloom  Grass Fighting 60  130  80  70  60  60  Tackle MegaDrain MachPunch Counter
 330  Flygon  Ground Dragon 80  100  80  100  80  80  FaintAttack DragonBreath DragonClaw HyperBeam
-336  Seviper  Poison Null 73  100  60  65  100  60  Bite PoisonFang Crunch PoisonJab
+359  Absol	 Dark Null 65 130 60 75 60 75 Bite SwordsDance AerialAce DoubleTeam
 362  Glalie  Ice Null 80  80  80  80  80  80 IceFang DoubleTeam IceBeam Blizzard
 373  Salamence  Dragon Flying 95  135  80  100  110  80  FireFang DragonBreath AerialAce DragonClaw
 384  Rayquaza  Dragon Flying 105  150  90  95  150  90 Crunch Fly DragonPulse HyperBeam  
