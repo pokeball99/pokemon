@@ -1,69 +1,69 @@
-Mega Horn 		Bug			Physical	120	85	10	Null
-X-scissor		Bug			Physical	80	100	15	Null
-Bug Buzz		Bug			Special		90	100	10	-SpDef
-Dragon Breath	Dragon		Special		60	100	20	Dmg40
-Dragon Claw		Dragon		Physical	80	100	15	Null
-Dragon Pulse	Dragon		Special		90	100	10	-SpDef
-Ice Beam		Ice			Special		95	100	10	Frz
-Blizzard		Ice			Special		120	70	5	Frz
-Ice Shard		Ice			Special		40	100	30	Priority
-Ice Fang		Ice			Physical	65	95	15	Flinch
-Aura Sphere		Fighting	Special		90	-1	20	Null
-Mach Punch		Fighting	Physical	40	100	30	Priority
-Force Palm		Fighting	Physical	60	100	10	Prz
-Counter			Fighting	Status		x2	100	20	-Priority
-Flamethrower	Fire		Special		95	100	15	Brn
-Fire Blast		Fire		Special		120	80	5	Brn
+MegaHorn 		Bug		Physical	120	85	10	Null
+X-scissor		Bug		Physical	80	100	15	Null
+BugBuzz			Bug		Special		90	100	10	-SpDef
+DragonBreath		Dragon		Special		60	100	20	Dmg40
+DragonClaw		Dragon		Physical	80	100	15	Null
+DragonPulse		Dragon		Special		90	100	10	-SpDef
+IceBeam			Ice		Special		95	100	10	Frz
+Blizzard		Ice		Special		120	70	5	Frz
+IceShard		Ice		Special		40	100	30	Priority
+IceFang			Ice		Physical	65	95	15	Flinch
+AuraSphere		Fighting	Special		90	-1	20	Null
+MachPunch		Fighting	Physical	40	100	30	Priority
+ForcePalm		Fighting	Physical	60	100	10	Prz
+Counter			Fighting	Status		200	100	20	-Priority
+Flamethrower		Fire		Special		95	100	15	Brn
+FireBlast		Fire		Special		120	80	5	Brn
 Ember			Fire		Special		40	100	25	Brn
-Flame Wheel		Fire		Physical	60	100	25	Null
-Fire Punch		Fire		Physical	75	100	15	Brn
-Fire Fang		Fire		Physical	65	95	15	Flinch
-Fly				Flying		Physical	90	95	15	Charge
-Drill Peck		Flying		Physical	80	100	20	Null
-Aerial Ace		Flying		Physical	60	-1	20	Null
+FlameWheel		Fire		Physical	60	100	25	Null
+FirePunch		Fire		Physical	75	100	15	Brn
+FireFang		Fire		Physical	65	95	15	Flinch
+Fly			Flying		Physical	90	95	15	Charge
+DrillPeck		Flying		Physical	80	100	20	Null
+AerialAce		Flying		Physical	60	-1	20	Null
 Gust			Flying		Special		40	100	35	Null
-Brave Bird		Flying		Physical	120	100	15	Recoil
-Solar Beam		Grass		Special		120	100	10	Charge
-Razor Leaf		Grass		Physical	55	95	25	Null
-Mega Drain		Grass		Special		40	100	15	HPSteal
-Vine Whip		Grass		Physical	35	100	15	Null
-Leaf Blade		Grass		Physical	90	100	15	Null
-Shadow Ball		Ghost		Special		80	100	15	-SpDef
-Confuse Ray		Ghost		Status		0	100	10	Confuse100		
+BraveBird		Flying		Physical	120	100	15	Recoil
+SolarBeam		Grass		Special		120	100	10	Charge
+RazorLeaf		Grass		Physical	55	95	25	Null
+MegaDrain		Grass		Special		40	100	15	HPSteal
+VineWhip		Grass		Physical	35	100	15	Null
+LeafBlade		Grass		Physical	90	100	15	Null
+ShadowBall		Ghost		Special		80	100	15	-SpDef
+ConfuseRay		Ghost		Status		0	100	10	Confuse100		
 Earthquake		Ground		Physical	90	100	10	Null
-Dig				Ground		Physical	80	100	10	Charge
+Dig			Ground		Physical	80	100	10	Charge
 Thunderbolt		Electric	Special		95	100	15	Prz
 Thunder			Electric	Special		120	70	10	Prz
-Thunder Wave	Electric	Status		0	100	20	Prz100
-Thunder Punch	Electric	Physical	75	100	15	Prz
-Hyper Beam		Normal		Special		150	90	5	Recharge
+ThunderWave		Electric	Status		0	100	20	Prz100
+ThunderPunch		Electric	Physical	75	100	15	Prz
+HyperBeam		Normal		Special		150	90	5	Recharge
 Tackle			Normal		Physical	35	95	35	Null
-Take Down		Normal		Physical	90	85	20	Recoil
-Body Slam		Normal		Physical	85	100	15	Prz
-Defense Curl	Normal		Status		0	-1	40	+Def
-Swords Dance	Normal		Status		0	-1	30	+Atk
+TakeDown		Normal		Physical	90	85	20	Recoil
+BodySlam		Normal		Physical	85	100	15	Prz
+DefenseCurl		Normal		Status		0	-1	40	+Def
+SwordsDance		Normal		Status		0	-1	30	+Atk
 Swift			Normal		Special		60	-1	20	Null
-Double Team		Normal		Status		0	-1	15	+Evade
+DoubleTeam		Normal		Status		0	-1	15	+Evade
 Protect			Normal		Status		0	-1	10	NoDmg
 Toxic			Poison		Status		0	85	10	Psn100
-Poison Jab		Poison		Physical	80	100	20	Psn
+PoisonJab		Poison		Physical	80	100	20	Psn
 Acid			Poison		Special		40	100	30	Psn
-Poison Fang		Poison		Physical	50	100	15	Flinch
-Cross Poison	Poison		Physical	50	90	10	+Crit
+PoisonFang		Poison		Physical	50	100	15	Flinch
+CrossPoison		Poison		Physical	50	90	10	+Crit
 Agility			Psychic		Status		0	-1	30	+Spd
 Psychic			Psychic		Special		90	100	10	-SpDef
 Confusion		Psychic		Special		50	100	25	Confuse
 Psybeam			Psychic		Special		65	100	25	Confuse
-Mirror Coat		Psychic		Special		x2	100	20	-Priority
-Stone Edge		Rock		Physical	80	100	5	+Crit
+MirrorCoat		Psychic		Special		200	100	20	-Priority
+StoneEdge		Rock		Physical	80	100	5	+Crit
 Rollout			Rock		Physical	30	100	20	Rep
-Water Gun		Water		Special		40	100	25	Null
-Hydro Pump		Water		Special		120	80	5	Null
+WaterGun		Water		Special		40	100	25	Null
+HydroPump		Water		Special		120	80	5	Null
 Splash			Water		Physical	0	100	40	Null
 Surf			Water		Special		95	100	15	Null
 Bubblebeam		Water		Special		65	100	20	-Spd
 Bite			Dark		Physical	60	100	25	Flinch
 Crunch			Dark		Physical	80	90	15	Flinch
-Dark Pulse		Dark		Special		80	100	15	Flinch
-Faint Attack	Dark		Physical	60	-1	20	Null
-Metal Claw		Steel		Physical	50	95	35	Null
+DarkPulse		Dark		Special		80	100	15	Flinch
+FaintAttack		Dark		Physical	60	-1	20	Null
+MetalClaw		Steel		Physical	50	95	35	Null

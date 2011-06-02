@@ -23,4 +23,8 @@ public class Move {
 		PP = pP;
 		Effect = effect;
 	}
+	
+	public String toString(){
+		return Name + " " + Type + " " + Form + " " + Damage + " " + Accuracy + " " + PP + " " + Effect;
+	}
 }
