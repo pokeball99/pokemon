@@ -15,5 +15,12 @@ public class Move {
 	public Move(String name, String type, String form, int damage,
 				int accuracy, int pP, String effect){
 		super();
+		Name = name;
+		Type = type;
+		Form = form;
+		Damage = damage;
+		Accuracy = accuracy;
+		PP = pP;
+		Effect = effect;
 	}
 }
