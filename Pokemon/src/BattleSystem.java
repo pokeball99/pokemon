@@ -12,11 +12,13 @@ import javax.imageio.ImageIO;
 public class BattleSystem extends Applet implements Runnable,KeyListener{
 	private ArrayList<String> commands = new ArrayList<String>();
 	private ArrayList<String> moves = new ArrayList<String>();
+	BufferedImage pokemon1;
 	//private 
 	public void init() {
 		setSize(700, 500);
 		setBackground(Color.WHITE);
-		//initializes applet
+		addKeyListener(this);
+		//initializes a lot of stuff
 	}
 
 	public void start(){
@@ -25,20 +27,19 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	
 	public void paint(Graphics g) {
 		update(g);
-		BufferedImage pokemon1 = null;
+		//Putting stuff on screen
+	}
+	
+	public void update(Graphics g){
 		try {
-			pokemon1 = ImageIO.read(new File("Charizard.png"));
+			pokemon1 = ImageIO.read(new File("Pokemon Sprites/Charizard.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		g.drawImage(pokemon1, 100, 500, null);
-		//Putting stuff on screen
-	}
-	
-	public void update(Graphics g){
 		//will prevent flickering>>look at double buffering
-	}
+}
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
