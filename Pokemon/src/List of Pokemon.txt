@@ -37,7 +37,7 @@
 437  Bronzong  Steel Psychic 67  89  116  33  79  116 Confusion ConfuseRay FaintAttack Psychic
 448  Lucario  Steel Fighting 70  110  70  90  115  70 MetalClaw ForcePalm SwordsDance AuraSphere
 491  Darkrai  Dark Null 70  90  90  125  135  90 FaintAttack DoubleTeam ShadowBall DarkPulse
-493  Arceus  Normal Null 120  120  120  120  120  120 AerialAce IceBeam Thunderbolt HyperBeam
+493  Arceus  Normal Null 120  120  120  120  120  120  Flamethrower IceBeam Thunderbolt HyperBeam
 495  Snivy  Grass Null 45  45  55  45  55  63 Tackle VineWhip MegaDrain LeafBlade 
 499  Pignite  Fire Null 90  93  55  70  55  55 Ember DefenseCurl Rollout Flamethrower
 503  Samurott  Water Null 95  100  85  108  70  70 WaterGun Megahorn SwordsDance HydroPump
