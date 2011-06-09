@@ -21,15 +21,17 @@ public class Pokemon{
 	private int SpDef;
 	private int Spd;
 	private int EXP;
-	private ArrayList<Move> MoveSet;
-	private BufferedImage Sprite;
+	private String Move1;
+	private String Move2;
+	private String Move3;
+	private String Move4;
 	
 
 	public Pokemon(){
 	}
 	public Pokemon(int dexNum, String name, String type1, String type2,
 			int level, int hp, int atk, int def, int spAtk, int spDef, int spd,
-			int exp, ArrayList<Move> moveSet, BufferedImage sprite) {
+			int exp, String move1, String move2, String move3, String move4) {
 		super();
 		DexNum = dexNum;
 		Name = name;
@@ -43,8 +45,10 @@ public class Pokemon{
 		SpDef = spDef;
 		Spd = spd;
 		EXP = exp;
-		MoveSet = moveSet;
-		Sprite = sprite;
+		Move1 = move1;
+		Move2 = move2;
+		Move3 = move3;
+		Move4 = move4; 
 	}
 
 	
@@ -146,24 +150,39 @@ public class Pokemon{
 		return EXP;
 	}
 
-	public void setMoveSet(ArrayList<Move> moveSet) {
-		MoveSet = moveSet;
+	public String getMove1() {
+		return Move1;
 	}
 	
-	public ArrayList<Move> getMoveSet() {
-		return MoveSet;
+	public void setMove1(String move1) {
+		Move1 = move1;
+	}
+
+	public String getMove2() {
+		return Move2;
 	}
 	
-	public void setSprite(BufferedImage sprite) {
-		Sprite = sprite;
+	public void setMove2(String move2) {
+		Move2 = move2;
 	}
-
-
-	public BufferedImage getSprite() {
-		return Sprite;
+	
+	public String getMove3() {
+		return Move3;
+	}
+	
+	public void setMove3(String move3) {
+		Move3 = move3;
+	}
+	
+	public String getMove4() {
+		return Move4;
+	}
+	
+	public void setMove4(String move4) {
+		Move4 = move4;
 	}
 	
 	public String toString() {
-		return DexNum + " " + Name + " " + Type1 + " " + Type2 + " " + Level + " "+ HP + " " + Atk + " " + Def + " " + SpAtk + " " + SpDef + " " + Spd + " "+ EXP + " " + MoveSet.toString();
+		return DexNum + " " + Name + " " + Type1 + " " + Type2 + " " + Level + " "+ HP + " " + Atk + " " + Def + " " + SpAtk + " " + SpDef + " " + Spd + " "+ EXP + " " + Move1 + " " + Move2 + " " + Move3 + " " + Move4;
 	}
 }
