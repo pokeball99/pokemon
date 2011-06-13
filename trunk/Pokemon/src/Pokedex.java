@@ -7,18 +7,14 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-//Doesn't work because elements in ArrayList "moves" = 
-//"MegaHorn Bug Physical 120 85 10 Null" so it can't find "MegaHorn" by itself.
-
-// Fix: use .get() method from moves to get the string to use in search.
-
+//Make this into a constructor, have a get method, take out static 
 
 public class Pokedex{
-/*	public static void main(String[]args) throws FileNotFoundException{
-		makePokemon();
+	
+	public Pokedex(){
+		
 	}
-	*/
-	public static ArrayList<Pokemon> makePokemon() throws FileNotFoundException{
+	public ArrayList<Pokemon> makePokemon() throws FileNotFoundException{
 		Scanner s = new Scanner(new File("src/List of Pokemon.txt"));
 		Scanner m = new Scanner(new File("src/List of Moves.txt"));
 		ArrayList<Pokemon> pkmn = new ArrayList<Pokemon>();
