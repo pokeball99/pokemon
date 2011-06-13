@@ -12,15 +12,26 @@ import javax.imageio.ImageIO;
 
 public class BattleSystem extends Applet implements Runnable,KeyListener{
 	private ArrayList<String> commands = new ArrayList<String>();
-	private ArrayList<String> moves = new ArrayList<String>();
 	Pokemon protagPKMN;
 	Pokemon enemyPKMN;
 	Image backbuffer;
 	Graphics backg;
 	BufferedImage protag;
 	BufferedImage enemy;
+	ArrayList<Pokemon> pkmn;
+	ArrayList<Move> moves;
+	
 	//private 
 	public void init() {
+		Pokedex pokedex = new Pokedex();
+		try {
+			pokedex.makePokemon();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		pkmn = pokedex.getPkmn();
+		moves = pokedex.getMoves();
 		setSize(400, 300);
 		setBackground(Color.WHITE);
 		addKeyListener(this);
@@ -54,8 +65,8 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	
 	public void drawPokemon(){
 		try {
-			protag = ImageIO.read(new File("PokemonSpritesRevised/CharizardBack.png"));
-			enemy = ImageIO.read(new File("PokemonSpritesRevised/ArceusFront.png"));
+			protag = ImageIO.read(new File("Pokemon Sprites/CharizardBack.png"));
+			enemy = ImageIO.read(new File("Pokemon Sprites/ArceusFront.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

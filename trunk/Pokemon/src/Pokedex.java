@@ -10,17 +10,15 @@ import java.io.IOException;
 //Make this into a constructor, have a get method, take out static 
 
 public class Pokedex{
+	private ArrayList<Pokemon> Pkmn;
+	private ArrayList<Move> Moves;
 	
 	public Pokedex(){
-		
 	}
-	public ArrayList<Pokemon> makePokemon() throws FileNotFoundException{
-		Scanner s = new Scanner(new File("src/List of Pokemon.txt"));
-		Scanner m = new Scanner(new File("src/List of Moves.txt"));
-		ArrayList<Pokemon> pkmn = new ArrayList<Pokemon>();
-		ArrayList<Move> moves = new ArrayList<Move>();
-		//ArrayList<String> moveSet = new ArrayList<String>();
-		BufferedImage sprite = null;
+	
+	public void makePokemon() throws FileNotFoundException{
+		Scanner s = new Scanner(new File("List of Pokemon.txt"));
+		Scanner m = new Scanner(new File("List of Moves.txt"));
 		while(m.hasNextLine()){
 			String move = m.nextLine();
 			Scanner moveScan = new Scanner(move);
@@ -32,12 +30,13 @@ public class Pokedex{
 			int pp = moveScan.nextInt();
 			String effect = moveScan.next();
 			Move nextMove = new Move(name, type, form, damage, accuracy, pp, effect);
-			moves.add(nextMove);
+			Moves.add(nextMove);
 		}
 		while(s.hasNextLine()){
 			String line = s.nextLine();
 			Scanner lineScan = new Scanner(line);
 			//String next = s.next();
+			
 			//Scanner tokenScan = new Scanner(next);
 			int dex = lineScan.nextInt();
 			String name = lineScan.next();
@@ -60,9 +59,15 @@ public class Pokedex{
 			Pokemon pokemon = new Pokemon(dex, name, type1, type2,
 				1, hp, atk, def, spAtk, spDef, spd, 0, moveOne, moveTwo, 
 				moveThree, moveFour);
-			pkmn.add(pokemon);
+			Pkmn.add(pokemon);
 		}
-		//System.out.println(pkmn.toString());
-		return pkmn;
+	}
+	
+	public ArrayList<Pokemon> getPkmn(){
+		return Pkmn;
+	}
+	
+	public ArrayList<Move> getMoves(){
+		return Moves;
 	}
 }
