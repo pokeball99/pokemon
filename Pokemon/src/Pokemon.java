@@ -21,17 +21,17 @@ public class Pokemon{
 	private int SpDef;
 	private int Spd;
 	private int EXP;
-	private String Move1;
-	private String Move2;
-	private String Move3;
-	private String Move4;
+	private Move Move1;
+	private Move Move2;
+	private Move Move3;
+	private Move Move4;
 	
 
 	public Pokemon(){
 	}
 	public Pokemon(int dexNum, String name, String type1, String type2,
 			int level, int hp, int atk, int def, int spAtk, int spDef, int spd,
-			int exp, String move1, String move2, String move3, String move4) {
+			int exp, Move move1, Move move2, Move move3, Move move4) {
 		super();
 		DexNum = dexNum;
 		Name = name;
@@ -45,12 +45,15 @@ public class Pokemon{
 		SpDef = spDef;
 		Spd = spd;
 		EXP = exp;
+		
+		
 		Move1 = move1;
 		Move2 = move2;
 		Move3 = move3;
-		Move4 = move4; 
+		Move4 = move4;
 	}
 
+	
 	
 	public void setDexNum(int dexNum){
 		DexNum = dexNum;
@@ -150,35 +153,35 @@ public class Pokemon{
 		return EXP;
 	}
 
-	public String getMove1() {
+	public Move getMove1() {
 		return Move1;
 	}
 	
-	public void setMove1(String move1) {
+	public void setMove1(Move move1) {
 		Move1 = move1;
 	}
 
-	public String getMove2() {
+	public Move getMove2() {
 		return Move2;
 	}
 	
-	public void setMove2(String move2) {
+	public void setMove2(Move move2) {
 		Move2 = move2;
 	}
 	
-	public String getMove3() {
+	public Move getMove3() {
 		return Move3;
 	}
 	
-	public void setMove3(String move3) {
+	public void setMove3(Move move3) {
 		Move3 = move3;
 	}
 	
-	public String getMove4() {
+	public Move getMove4() {
 		return Move4;
 	}
 	
-	public void setMove4(String move4) {
+	public void setMove4(Move move4) {
 		Move4 = move4;
 	}
 	

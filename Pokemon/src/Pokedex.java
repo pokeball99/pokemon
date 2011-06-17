@@ -10,10 +10,12 @@ import java.io.IOException;
 //Make this into a constructor, have a get method, take out static 
 
 public class Pokedex{
-	private ArrayList<Pokemon> Pkmn;
-	private ArrayList<Move> Moves;
+	private ArrayList<Pokemon> pkmn;
+	private ArrayList<Move> moves;
 	
 	public Pokedex(){
+		pkmn = new ArrayList<Pokemon>();
+		moves = new ArrayList<Move>();
 	}
 	
 	public void makePokemon() throws FileNotFoundException{
@@ -30,7 +32,7 @@ public class Pokedex{
 			int pp = moveScan.nextInt();
 			String effect = moveScan.next();
 			Move nextMove = new Move(name, type, form, damage, accuracy, pp, effect);
-			Moves.add(nextMove);
+			moves.add(nextMove);
 		}
 		while(s.hasNextLine()){
 			String line = s.nextLine();
@@ -55,19 +57,31 @@ public class Pokedex{
 			String moveTwo = lineScan.next();
 			String moveThree = lineScan.next();
 			String moveFour = lineScan.next();
-	
+			
+			
+			
+			
 			Pokemon pokemon = new Pokemon(dex, name, type1, type2,
-				1, hp, atk, def, spAtk, spDef, spd, 0, moveOne, moveTwo, 
-				moveThree, moveFour);
-			Pkmn.add(pokemon);
+				1, hp, atk, def, spAtk, spDef, spd, 0, findMove(moveOne), findMove(moveTwo), 
+				findMove(moveThree), findMove(moveFour));
+			pkmn.add(pokemon);
 		}
 	}
 	
+	public Move findMove(String move){
+		for(Move m: moves){
+			if(move.equals(m.getName())){
+				return m;
+			}
+		}
+		return null;
+	}
+	
 	public ArrayList<Pokemon> getPkmn(){
-		return Pkmn;
+		return pkmn;
 	}
 	
 	public ArrayList<Move> getMoves(){
-		return Moves;
+		return moves;
 	}
 }

@@ -4,8 +4,8 @@
 025  Pikachu  Electric Null 35  55  30  90  50  40  Tackle ThunderWave Thunderbolt Thunder
 059  Arcanine  Fire Null 90  110  80  95  100  80  Bite FireFang TakeDown FireBlast 
 094  Gengar  Ghost Poison 60  65  60  110  130  75 Psychic ConfuseRay ShadowBall DarkPulse
-129  Magikarp  Water Null 20  10  55  80  15  20  Splash Tackle HyperBeam Null
-133  Eevee  Normal Null 55  55  50  55  45  65  Tackle Bite DoubleTeam Take Down 
+129  Magikarp  Water Null 20  10  55  80  15  20  Splash Tackle HyperBeam WaterGun
+133  Eevee  Normal Null 55  55  50  55  45  65  Tackle Bite DoubleTeam TakeDown 
 143  Snorlax  Normal Null 160  110  65  30  65  110 Tackle DefenseCurl BodySlam HyperBeam 
 150  Mewtwo  Psychic Null 106  110  90  130  154  90 Confusion Psychic AuraSphere HyperBeam
 153  Bayleef  Grass Null 60  62  80  60  63  80 VineWhip  RazorLeaf  BodySlam  SolarBeam 
@@ -16,9 +16,9 @@
 181  Ampharos  Electric Null 90  75  75  55  115  90  ThunderPunch  ThunderWave  FirePunch  Thunder
 183  Marill  Water Null 70  20  50  40  20  50  WaterGun DefenseCurl Bubblebeam Surf 
 196  Espeon  Psychic Null 65  65  60  110  130  95  Confusion  Swift  Psybeam Psychic
-202  Wobbuffet  Psychic Null 190  33  58  33  33  58 Splash  Counter MirrorCoat Null
+202  Wobbuffet  Psychic Null 190  33  58  33  33  58 Splash  Counter MirrorCoat Psychic
 250  Ho-Oh  Fire Flying 106  130  90  90  110  154  Gust  Flamethrower BraveBird FireBlast
-253  Grovyle  Grass Null 50  65  45  95  85  65 Absorb Agility LeafBlade SolarBeam
+253  Grovyle  Grass Null 50  65  45  95  85  65 VineWhip Agility LeafBlade SolarBeam
 255  Torchic  Fire Null 45  60  40  45  70  50  Ember AerialAce Dig Flamethrower
 260  Swampert  Water Ground 100  110  90  60  85  90  WaterGun TakeDown Surf Earthquake 
 283  Surskit  Water Bug 40  30  32  65  50  52  Bubblebeam DoubleTeam Agility BugBuzz
@@ -30,7 +30,7 @@
 384  Rayquaza  Dragon Flying 105  150  90  95  150  90 Crunch Fly DragonPulse HyperBeam  
 389  Torterra  Grass Ground 95  109  105  56  75  85 RazorLeaf MegaDrain Earthquake SolarBeam
 391  Monferno  Fire Fighting 64  78  52  81  78  52 Ember MachPunch FlameWheel Flamethrower
-393  Piplup  Water Null 53  51  53  40  61  56 Bubblebeam AerialAce DrillPeck HyproPump 
+393  Piplup  Water Null 53  51  53  40  61  56 Bubblebeam AerialAce DrillPeck HydroPump 
 396  Starly  Normal Flying 40  55  30  60  30  30 Tackle DoubleTeam AerialAce BraveBird
 399  Bidoof  Normal Null 59  45  40  31  35  40 Tackle DefenseCurl Rollout TakeDown
 415  Combee  Bug Flying 30  30  42  70  30  42 Gust Swift X-scissor MegaHorn
@@ -40,7 +40,7 @@
 493  Arceus  Normal Null 120  120  120  120  120  120  Flamethrower IceBeam Thunderbolt HyperBeam
 495  Snivy  Grass Null 45  45  55  45  55  63 Tackle VineWhip MegaDrain LeafBlade 
 499  Pignite  Fire Null 90  93  55  70  55  55 Ember DefenseCurl Rollout Flamethrower
-503  Samurott  Water Null 95  100  85  108  70  70 WaterGun Megahorn SwordsDance HydroPump
+503  Samurott  Water Null 95  100  85  108  70  70 WaterGun MegaHorn SwordsDance HydroPump
 526  Gigalith  Rock Null 85  135  130  60  70  25 Tackle StoneEdge DoubleTeam Earthquake
 558  Crustle  Bug Rock  70  95  125  65  75  45 FaintAttack BugBuzz X-scissor StoneEdge
 595  Joltik  Electric Bug  50  47  50  57  50  65 Thunderbolt ThunderWave Agility BugBuzz
