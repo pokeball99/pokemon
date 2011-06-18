@@ -25,7 +25,7 @@ public class Pokemon{
 	private Move Move2;
 	private Move Move3;
 	private Move Move4;
-	
+	//ADDD ARRAY LIST HERE
 
 	public Pokemon(){
 	}

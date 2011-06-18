@@ -33,6 +33,11 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	Move enemyMove3;
 	Move enemyMove4;*/
 	
+	
+	/* IMPORTANT CHANGE THE DESIGN SO THAT ALL THE MOVE STUFF IS IN POKEMON, NOT BATTLE SYSTEM
+	 *I.E MAKE AN ARRAYLIST, DON'T USE SEPERATE MOVES
+	 */
+	
 	//private 
 	public void init() {
 		Pokedex pokedex = new Pokedex();
@@ -56,17 +61,18 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 		while(protagPKMN.getName().equals("Grovyle")){
 			protagPKMN = pkmn.get((int)Math.round(Math.random() * 50));
 		}
-		enemyPKMN = pkmn.get((int)Math.round(Math.random() * 50));
-		protagMoveList.add(protagPKMN.getMove1());
+		/*enemyPKMN = pkmn.get((int)Math.round(Math.random() * 50));
+		protagMoveList = new ArrayList<Move>();
+		protagMoveList.add(protagPKMN.getMove1()); 
 		protagMoveList.add(protagPKMN.getMove2());
 		protagMoveList.add(protagPKMN.getMove3());
 		protagMoveList.add(protagPKMN.getMove4());
+		MoveList = new ArrayList<Move>();
 		enemyMoveList.add(enemyPKMN.getMove1());
 		enemyMoveList.add(enemyPKMN.getMove2());
 		enemyMoveList.add(enemyPKMN.getMove3());
 		enemyMoveList.add(enemyPKMN.getMove4());
-	}
-
+	*/}
 	public void start(){
 		//
 	}
@@ -154,18 +160,9 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 				enemyMoveList(3) 
 			}
 		}*/
-		if (moveChance == 0){
-			System.out.println(enemyPKMN.getName() + " used " + enemyMoveList.get(0).getName());
-		}
-		if (moveChance == 1){
-			System.out.println(enemyPKMN.getName() + " used " + enemyMoveList.get(1).getName());
-		}
-		if (moveChance == 2){
-			System.out.println(enemyPKMN.getName() + " used " + enemyMoveList.get(2).getName());
-		}
-		if (moveChance == 3){
-			System.out.println(enemyPKMN.getName() + " used " + enemyMoveList.get(3).getName());
-		}
+		//ADD  THISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS DOWN THERE
+		//System.out.println(enemyPKMN.getName() + " used " + enemyPKMN.getMove(moveChance).getName());
+		
 		turn = true;
 	}
 		//if we want to continually update the canvas, we need to:
