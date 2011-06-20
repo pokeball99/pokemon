@@ -24,19 +24,9 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	ArrayList<Move> enemyMoveList;
 	boolean turn;
 	int moveChance;
-	/*Move protagMove1;
-	Move protagMove2;
-	Move protagMove3;
-	Move protagMove4;*/
-	/*Move enemyMove1;
-	Move enemyMove2;
-	Move enemyMove3;
-	Move enemyMove4;*/
-	
-	
-	/* IMPORTANT CHANGE THE DESIGN SO THAT ALL THE MOVE STUFF IS IN POKEMON, NOT BATTLE SYSTEM
-	 *I.E MAKE AN ARRAYLIST, DON'T USE SEPERATE MOVES
-	 */
+	int damageTaken;
+	int damage;
+
 	
 	//private 
 	public void init() {
@@ -61,18 +51,10 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 		while(protagPKMN.getName().equals("Grovyle")){
 			protagPKMN = pkmn.get((int)Math.round(Math.random() * 50));
 		}
-		/*enemyPKMN = pkmn.get((int)Math.round(Math.random() * 50));
-		protagMoveList = new ArrayList<Move>();
-		protagMoveList.add(protagPKMN.getMove1()); 
-		protagMoveList.add(protagPKMN.getMove2());
-		protagMoveList.add(protagPKMN.getMove3());
-		protagMoveList.add(protagPKMN.getMove4());
-		MoveList = new ArrayList<Move>();
-		enemyMoveList.add(enemyPKMN.getMove1());
-		enemyMoveList.add(enemyPKMN.getMove2());
-		enemyMoveList.add(enemyPKMN.getMove3());
-		enemyMoveList.add(enemyPKMN.getMove4());
-	*/}
+		enemyPKMN = pkmn.get((int)Math.round(Math.random() * 50));
+		protagMoveList = protagPKMN.getMoveSet();
+		enemyMoveList = enemyPKMN.getMoveSet();
+	}
 	public void start(){
 		//
 	}
@@ -85,7 +67,6 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	public void update(Graphics g){
 		drawPokemon();
 		g.drawImage(backbuffer, 0, 0, this);
-		turn = false;
 		if(turn = true){
 			try{
 					Thread.sleep(10);
@@ -101,73 +82,77 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 				double STAB = 1.0;
 				
 				if (key.equals("pressed LEFT")){ 
-					System.out.println(protagPKMN.getName() + " used " + protagPKMN.getMove1() + "!");
+					System.out.println(protagPKMN.getName() + " used " + protagPKMN.getMoveSet().get(0).getName() + "!");
 					chance = (int) (Math.random() * protagMoveList.get(0).getAccuracy());
 					if(chance <= 100 - protagMoveList.get(0).getAccuracy()){
 						System.out.println("But it missed!");
 					}
-				
+					damage(protagPKMN,enemyPKMN,0);
 
 				}	
 				if (key.equals("pressed UP")){ 
-					System.out.println(protagPKMN.getName() + " used " + protagPKMN.getMove2() + "!");
+					System.out.println(protagPKMN.getName() + " used " + protagPKMN.getMoveSet().get(1).getName() + "!");
 					chance = (int) (Math.random() * protagMoveList.get(1).getAccuracy());
 					if(chance <= 100 - protagMoveList.get(1).getAccuracy()){
 						System.out.println("But it missed!");
 					}
-		
+					damage(protagPKMN,enemyPKMN,1);
 				
 				}
 				if (key.equals("pressed DOWN")){ 
-					System.out.println(protagPKMN.getName() + " used " + protagPKMN.getMove3() + "!");
+					System.out.println(protagPKMN.getName() + " used " + protagPKMN.getMoveSet().get(2).getName() + "!");
 					chance = (int) (Math.random() * protagMoveList.get(2).getAccuracy());
 					if(chance <= 100 - protagMoveList.get(2).getAccuracy()){
 						System.out.println("But it missed!");
 					}
-				
+					damage(protagPKMN,enemyPKMN,2);
 				}
+				
 				if (key.equals("pressed RIGHT")){ 
-					System.out.println(protagPKMN.getName() + " used " + protagPKMN.getMove4() + "!");
+					System.out.println(protagPKMN.getName() + " used " + protagPKMN.getMoveSet().get(3).getName() + "!");
 					chance = (int) (Math.random() * protagMoveList.get(3).getAccuracy());
 					if(chance <= 100 - protagMoveList.get(3).getAccuracy()){
 						System.out.println("But it missed!");
 					}
-					
+					damage(protagPKMN,enemyPKMN,3);
 				}
 				turn = false;
 					return true;
 			}
 		});
-	}else {
-		moveChance = (int)Math.round((Math.random() * 3));
-		/*for(Move m: moves){
-			if(enemyMoveList(0).equals(m.getName())){
-				enemyMoveList(0)
+		if(turn = false) {
+			moveChance = (int)Math.round((Math.random() * 3));
+			System.out.println("" + moveChance);
+			/*for(Move m: moves){
+				if(enemyMoveList(0).equals(m.getName())){
+					enemyMoveList(0)
+				}
 			}
+			for(Move m: moves){
+				if(enemyMoveList(1).equals(m.getName())){
+					enemyMoveList(1) 
+				}
+			}
+			for(Move m: moves){
+				if(enemyMoveList(2).equals(m.getName())){
+					enemyMoveList(2) 
+				}
+			}
+			for(Move m: moves){
+				if(enemyMoveList(3).equals(m.getName())){
+					enemyMoveList(3) 
+				}
+			}*/
+			//ADD  THISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS DOWN THERE
+			System.out.println(enemyPKMN.getName() + " used " + enemyPKMN.getMoveSet().get(moveChance).getName());
+			
+			turn = true;
 		}
-		for(Move m: moves){
-			if(enemyMoveList(1).equals(m.getName())){
-				enemyMoveList(1) 
-			}
-		}
-		for(Move m: moves){
-			if(enemyMoveList(2).equals(m.getName())){
-				enemyMoveList(2) 
-			}
-		}
-		for(Move m: moves){
-			if(enemyMoveList(3).equals(m.getName())){
-				enemyMoveList(3) 
-			}
-		}*/
-		//ADD  THISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS DOWN THERE
-		//System.out.println(enemyPKMN.getName() + " used " + enemyPKMN.getMove(moveChance).getName());
-		
-		turn = true;
-	}
-		//if we want to continually update the canvas, we need to:
+			//if we want to continually update the canvas, we need to:
 		repaint();
+		}
 	}
+	
 	public void drawPokemon(){
 		try {
 			protag = ImageIO.read(new File("Pokemon Sprites/" + protagPKMN.getName() + "Back.png"));
@@ -184,6 +169,7 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 		//Draw Enemy HP Bar
 		backg.drawRect(25, 25, 150, 5);
 		backg.setColor(Color.GREEN);
+		enemyPKMN.setHP(enemyPKMN.getHP() - damage);
 		backg.fillRect(26, 26, 149, 4);
 		backg.setColor(Color.BLACK);
 		
@@ -203,21 +189,17 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	
 	public void drawData(){
 		//Draws the four move's name and PP
-		Move move1 = protagPKMN.getMove1();
-		backg.drawString(move1.getName(), 100, 265);
-		//backg.drawString("" + protagMove1.getPP(), 50, 265);
+		backg.drawString(protagPKMN.getMoveSet().get(0).getName(), 100, 265);
+		backg.drawString("" + protagPKMN.getMoveSet().get(0).getPP(), 50, 265);
 		
-		Move move2 = protagPKMN.getMove2();
-		backg.drawString(move2.getName(), 300, 265);
-		//backg.drawString("" + protagMove2.getPP(), 250, 265);
+		backg.drawString(protagPKMN.getMoveSet().get(1).getName(), 300, 265);
+		backg.drawString("" + protagPKMN.getMoveSet().get(1).getPP(), 250, 265);
+
+		backg.drawString(protagPKMN.getMoveSet().get(2).getName(), 100, 290);
+		backg.drawString("" + protagPKMN.getMoveSet().get(2).getPP(), 50, 290);
 		
-		Move move3 = protagPKMN.getMove3();
-		backg.drawString(move3.getName(), 100, 290);
-		//backg.drawString("" + protagMove3.getPP(), 50, 290);
-		
-		Move move4 = protagPKMN.getMove4();
-		backg.drawString(move4.getName(), 300, 290);
-		//backg.drawString("" + protagMove4.getPP(), 250, 290);
+		backg.drawString(protagPKMN.getMoveSet().get(3).getName(), 300, 290);
+		backg.drawString("" + protagPKMN.getMoveSet().get(3).getPP(), 250, 290);
 		
 		//Draws PKMN's name and HP
 		backg.drawString(protagPKMN.getName(), 310, 170);
@@ -250,8 +232,29 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 		
 	}
 	
+	public int damage(Pokemon atkPKMN, Pokemon defPKMN, int moveNum){
+		damage = 0;
+		int Crit = 1;
 	
-	
+		if(Math.random()<=0.05){
+		    Crit = 2;
+		}
+		if(protagPKMN.getMoveSet().get(0).getForm().equals("Physical")){
+			damage = ((int)(((atkPKMN.getMoveSet().get(moveNum).getDamage() * (atkPKMN.getAtk()  / 5))  /  (defPKMN.getDef() + 2)) * Crit * (Math.random() / 2 + .75) /** STAB*/));
+			System.out.println("" + damage);
+			if(Crit == 2){
+				System.out.println("It's a critical hit!");
+			}
+		}else{
+			damage = ((int)(((atkPKMN.getMoveSet().get(moveNum).getDamage() * (atkPKMN.getSpAtk()  / 5))  /  (defPKMN.getSpDef() + 2)) * Crit * (Math.random() / 2 + .75) /** STAB*/));
+			if(Crit == 2){
+				System.out.println("It's a critical hit!");
+			}
+			System.out.println("" + damage);
+		}
+		
+		return damage;
+	}
 }
 
 
