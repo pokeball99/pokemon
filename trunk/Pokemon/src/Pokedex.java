@@ -58,12 +58,14 @@ public class Pokedex{
 			String moveThree = lineScan.next();
 			String moveFour = lineScan.next();
 			
-			
-			
+			ArrayList<Move> moveList = new ArrayList<Move>();
+			moveList.add(findMove(moveOne));
+			moveList.add(findMove(moveTwo));
+			moveList.add(findMove(moveThree));
+			moveList.add(findMove(moveFour));
 			
 			Pokemon pokemon = new Pokemon(dex, name, type1, type2,
-				1, hp, atk, def, spAtk, spDef, spd, 0, findMove(moveOne), findMove(moveTwo), 
-				findMove(moveThree), findMove(moveFour));
+				1, hp, atk, def, spAtk, spDef, spd, 0, moveList);
 			pkmn.add(pokemon);
 		}
 	}

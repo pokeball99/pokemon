@@ -21,17 +21,14 @@ public class Pokemon{
 	private int SpDef;
 	private int Spd;
 	private int EXP;
-	private Move Move1;
-	private Move Move2;
-	private Move Move3;
-	private Move Move4;
+	private ArrayList<Move> MoveSet;
 	//ADDD ARRAY LIST HERE
 
 	public Pokemon(){
 	}
 	public Pokemon(int dexNum, String name, String type1, String type2,
 			int level, int hp, int atk, int def, int spAtk, int spDef, int spd,
-			int exp, Move move1, Move move2, Move move3, Move move4) {
+			int exp, ArrayList<Move> moveSet) {
 		super();
 		DexNum = dexNum;
 		Name = name;
@@ -45,12 +42,8 @@ public class Pokemon{
 		SpDef = spDef;
 		Spd = spd;
 		EXP = exp;
+		MoveSet = moveSet;
 		
-		
-		Move1 = move1;
-		Move2 = move2;
-		Move3 = move3;
-		Move4 = move4;
 	}
 
 	
@@ -153,39 +146,16 @@ public class Pokemon{
 		return EXP;
 	}
 
-	public Move getMove1() {
-		return Move1;
-	}
-	
-	public void setMove1(Move move1) {
-		Move1 = move1;
-	}
 
-	public Move getMove2() {
-		return Move2;
+	public ArrayList<Move> getMoveSet() {
+		return MoveSet;
 	}
 	
-	public void setMove2(Move move2) {
-		Move2 = move2;
-	}
-	
-	public Move getMove3() {
-		return Move3;
-	}
-	
-	public void setMove3(Move move3) {
-		Move3 = move3;
-	}
-	
-	public Move getMove4() {
-		return Move4;
-	}
-	
-	public void setMove4(Move move4) {
-		Move4 = move4;
+	public void setMoveSet(ArrayList<Move> moveSet) {
+		MoveSet = moveSet;
 	}
 	
 	public String toString() {
-		return DexNum + " " + Name + " " + Type1 + " " + Type2 + " " + Level + " "+ HP + " " + Atk + " " + Def + " " + SpAtk + " " + SpDef + " " + Spd + " "+ EXP + " " + Move1 + " " + Move2 + " " + Move3 + " " + Move4;
+		return DexNum + " " + Name + " " + Type1 + " " + Type2 + " " + Level + " "+ HP + " " + Atk + " " + Def + " " + SpAtk + " " + SpDef + " " + Spd + " "+ EXP + " " + MoveSet.toString();
 	}
 }
