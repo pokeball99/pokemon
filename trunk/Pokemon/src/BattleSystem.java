@@ -22,7 +22,7 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	ArrayList<Move> moves;
 	ArrayList<Move> protagMoveList;
 	ArrayList<Move> enemyMoveList;
-	boolean turn;
+	int turn;
 	int moveChance;
 	int protagAtkDamage;
 	int enemyAtkDamage;
@@ -30,6 +30,7 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	int protagHPBar;
 	int protagMaxHP;
 	int enemyMaxHP;
+	int last;
 
 	
 	//private 
@@ -62,6 +63,8 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 		protagHPBar = 150;
 		protagMaxHP = protagPKMN.getHP();
 		enemyMaxHP = enemyPKMN.getHP();
+		turn = 1;
+		last = 0;
 		drawPokemon();
 	}
 	
@@ -70,28 +73,55 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 	}
 	
 	public void paint(Graphics g) {
-		if((protagPKMN.getHP() != 0) || (enemyPKMN.getHP() != 0)){
+		if((protagPKMN.getHP() > 0) && (enemyPKMN.getHP() > 0)){
 			update(g);
-		}
-		if(protagPKMN.getHP() <= 0){
-			System.out.println(protagPKMN.getName() + " fainted!");
-		}
-		if(enemyPKMN.getHP() <=0){
-			System.out.println(enemyPKMN.getName() + " fainted!");
 		}
 		//Putting stuff on screen
 	}
 	
 	public void update(Graphics g){
 		g.drawImage(backbuffer, 0, 0, this);
-		if(turn == false) {
+		
+		if((protagPKMN.getHP() <= 0) && (enemyPKMN.getHP() <=0) && last != 1){
+			turn = 2;
+			last = 1;
+			System.out.println(protagPKMN.getName() + " fainted!");
+			System.out.println(enemyPKMN.getName() + " fainted!");
+			backg.drawString("TIE", 25,25);
+			backg.drawString("TIE", 225, 175);
+		}
+		else if((protagPKMN.getHP() <= 0) && last != 1){
+			turn = 2;
+			last = 1;
+			System.out.println(protagPKMN.getName() + " fainted!");
+			backg.drawString("WIN", 25,25);
+			backg.drawString("LOSE", 225, 175);
+			reDrawPokemon();
+			drawData();
+			//update(g);
+		}
+		else if((enemyPKMN.getHP() <=0) && last != 1){
+			turn = 2;
+			last = 1;
+			System.out.println(enemyPKMN.getName() + " fainted!");
+			//backg.setColor(Color.WHITE);
+			backg.fillRect(25, 25, 150, 5);
+			backg.setColor(Color.BLACK);
+			backg.drawString("WIN",225,175);
+			backg.drawString("LOSE", 25, 25);
+			reDrawPokemon();
+			drawData();
+			//g.drawImage(backbuffer, 0, 0, this);
+		}
+		
+		if(turn == 0) {
 			moveChance = (int)Math.round((Math.random() * 3));
-			System.out.println(enemyPKMN.getName() + " used " + enemyPKMN.getMoveSet().get(moveChance).getName());
+			System.out.println(enemyPKMN.getName() + " used " + enemyPKMN.getMoveSet().get(moveChance).getName() + "!");
 			damage(enemyPKMN, protagPKMN, moveChance);
 			reDrawPokemon();
-			turn = true;
+			turn = 1;
 		}
-		if(turn == true){
+		else if(turn == 1){
 			try{
 					Thread.sleep(10);
 			}catch(InterruptedException e){}
@@ -101,8 +131,6 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 			public boolean dispatchKeyEvent(java.awt.event.KeyEvent event) { 
 				String key = javax.swing.KeyStroke.getKeyStrokeForEvent(event).toString(); 
 				int chance = 100;
-				
-				
 				if (key.equals("pressed LEFT")){ 
 					if(protagMoveList.get(0).getPP() <= 0){
 						System.out.println(protagMoveList.get(0).getName() + " ran out of PP!");
@@ -111,13 +139,13 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 						chance = (int) (Math.random() * protagMoveList.get(0).getAccuracy());
 						if(chance <= 100 - protagMoveList.get(0).getAccuracy()){
 							System.out.println("But it missed!");
+						}else {
+							damage(protagPKMN,enemyPKMN,0);
 						}
-						damage(protagPKMN,enemyPKMN,0);
 						protagPKMN.getMoveSet().get(0).setPP(protagPKMN.getMoveSet().get(0).getPP() - 1);
-						reDrawPokemon();
 					}
-				}	
-				if (key.equals("pressed UP")){ 
+					turn = 0;
+				} else if (key.equals("pressed UP")){ 
 					if(protagMoveList.get(1).getPP() <= 0){
 						System.out.println(protagMoveList.get(1).getName() + " ran out of PP!");
 					}else{
@@ -125,13 +153,13 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 						chance = (int) (Math.random() * protagMoveList.get(1).getAccuracy());
 						if(chance <= 100 - protagMoveList.get(1).getAccuracy()){
 							System.out.println("But it missed!");
+						}else{
+							damage(protagPKMN,enemyPKMN,1);
 						}
-						damage(protagPKMN,enemyPKMN,1);
 						protagPKMN.getMoveSet().get(1).setPP(protagPKMN.getMoveSet().get(1).getPP() - 1);
-						reDrawPokemon();
 					}
-				}
-				if (key.equals("pressed DOWN")){ 
+					turn = 0;
+				} else if (key.equals("pressed DOWN")){ 
 					if(protagMoveList.get(2).getPP() <= 0){
 						System.out.println(protagMoveList.get(2).getName() + " ran out of PP!");
 					}else{
@@ -139,14 +167,13 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 						chance = (int) (Math.random() * protagMoveList.get(2).getAccuracy());
 						if(chance <= 100 - protagMoveList.get(2).getAccuracy()){
 							System.out.println("But it missed!");
+						}else{
+							damage(protagPKMN,enemyPKMN,2);
 						}
-						damage(protagPKMN,enemyPKMN,2);
 						protagPKMN.getMoveSet().get(2).setPP(protagPKMN.getMoveSet().get(2).getPP() - 1);
-						reDrawPokemon();
 					}
-				}
-				
-				if (key.equals("pressed RIGHT")){ 
+					turn = 0;
+				} else if (key.equals("pressed RIGHT")){ 
 					if(protagMoveList.get(3).getPP() <= 0){
 						System.out.println(protagMoveList.get(3).getName() + " ran out of PP!");
 					}else{
@@ -154,19 +181,26 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 						chance = (int) (Math.random() * protagMoveList.get(3).getAccuracy());
 						if(chance <= 100 - protagMoveList.get(3).getAccuracy()){
 							System.out.println("But it missed!");
+						}else{
+							damage(protagPKMN,enemyPKMN,3);
 						}
-						damage(protagPKMN,enemyPKMN,3);
 						protagPKMN.getMoveSet().get(3).setPP(protagPKMN.getMoveSet().get(3).getPP() - 1);
-						reDrawPokemon();
 					}
+					turn = 0;
 				}
-				turn = false;
+
 				return true;
 			}
 		});
 			//if we want to continually update the canvas, we need to:
-		repaint();
+		
 		}
+		if(last == 0){
+			repaint();
+		}	
+	//HEEEEEEEEEEEEEEERRRRRREEEEEEE
+			//if you put in that if statement, the game never shows a loss/win
+			//if you don't, it glitches the win/lose/tie
 	}
 	
 	public void drawPokemon(){
@@ -260,6 +294,7 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 		backg.setColor(Color.WHITE);
 		backg.fillRect(25, 25, 150, 5);
 		backg.setColor(Color.BLACK);
+		
 		enemyPKMN.setHP(enemyPKMN.getHP() - protagAtkDamage);
 		enemyHPBar = (int) ((double) enemyPKMN.getHP() / enemyMaxHP * 150);
 		backg.drawRect(24, 25, 151, 5);
@@ -273,9 +308,12 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 		backg.setColor(Color.BLACK);
 		
 		//Draw Protag HP Bar
+		backg.setColor(Color.WHITE);
+		backg.fillRect(225, 175, 150, 5);
+		backg.setColor(Color.BLACK);
+		
 		protagPKMN.setHP(protagPKMN.getHP() - enemyAtkDamage);
 		protagHPBar = (int) ((double) protagPKMN.getHP() / protagMaxHP * 150);
-		System.out.println(protagHPBar + "p");
 		backg.drawRect(224, 175, 151, 5);
 		backg.setColor(Color.GREEN);
 		backg.fillRect(225, 176, protagHPBar, 4);
