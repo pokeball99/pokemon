@@ -57,6 +57,9 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 			protagPKMN = pkmn.get((int)Math.round(Math.random() * 50));
 		}
 		enemyPKMN = pkmn.get((int)Math.round(Math.random() * 50));
+		while(protagPKMN.getName().equals(enemyPKMN.getName())){
+			enemyPKMN = pkmn.get((int)Math.round(Math.random() * 50));
+		}
 		protagMoveList = protagPKMN.getMoveSet();
 		enemyMoveList = enemyPKMN.getMoveSet();
 		enemyHPBar = 150;
@@ -365,7 +368,7 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 			if(Math.random()<=0.05){
 			    Crit = 2;
 			}
-			if(protagPKMN.getMoveSet().get(0).getForm().equals("Physical")){
+			if(protagPKMN.getMoveSet().get(moveNum).getForm().equals("Physical")){
 				protagAtkDamage = ((int)(((atkPKMN.getMoveSet().get(moveNum).getDamage() * (atkPKMN.getAtk()  / 5))  /  (defPKMN.getDef() + 2)) * Crit * (Math.random() / 2 + .75) /** STAB*/));
 				System.out.println("" + protagAtkDamage);
 				if(Crit == 2){
@@ -378,6 +381,9 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 				}
 				System.out.println("" + protagAtkDamage);
 			}
+			if(protagPKMN.getMoveSet().get(moveNum).getPP() == 0){
+				protagAtkDamage = 0;
+			}
 			return protagAtkDamage;
 		}else{
 			enemyAtkDamage = 0;
@@ -385,7 +391,7 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 			if(Math.random()<=0.05){
 			    Crit = 2;
 			}
-			if(enemyPKMN.getMoveSet().get(0).getForm().equals("Physical")){
+			if(enemyPKMN.getMoveSet().get(moveNum).getForm().equals("Physical")){
 				enemyAtkDamage = ((int)(((atkPKMN.getMoveSet().get(moveNum).getDamage() * (atkPKMN.getAtk()  / 5))  /  (defPKMN.getDef() + 2)) * Crit * (Math.random() / 2 + .75) /** STAB*/));
 				System.out.println("" + enemyAtkDamage);
 				if(Crit == 2){
@@ -397,6 +403,9 @@ public class BattleSystem extends Applet implements Runnable,KeyListener{
 					System.out.println("It's a critical hit!");
 				}
 				System.out.println("" + enemyAtkDamage);
+			}
+			if(enemyPKMN.getMoveSet().get(moveNum).getPP() == 0){
+				enemyAtkDamage = 0;
 			}
 			return enemyAtkDamage;
 		}

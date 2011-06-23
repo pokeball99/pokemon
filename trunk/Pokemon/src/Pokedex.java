@@ -65,7 +65,7 @@ public class Pokedex{
 			moveList.add(findMove(moveFour));
 			
 			Pokemon pokemon = new Pokemon(dex, name, type1, type2,
-				1, hp, atk, def, spAtk, spDef, spd, 0, moveList);
+				1, hp * 5, atk, def, spAtk, spDef, spd, 0, moveList);
 			pkmn.add(pokemon);
 		}
 	}
